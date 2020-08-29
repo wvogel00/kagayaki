@@ -1,6 +1,6 @@
 module Main where
 
-import Lib
+import Kagayaki
 
 main :: IO ()
-main = someFunc
+main = Kagayaki.runKagayaki

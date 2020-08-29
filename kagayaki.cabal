@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 7d30225ac249cf0b112af0d0ebcb29825aa6f39acf3bab4432ebb325bd27f02c
+-- hash: eee116a61c7280468914af87c892ed320b30ffe83c7cbfe2084bf3f5470e748e
 
 name:           kagayaki
 version:        0.1.0.0
@@ -27,13 +27,18 @@ source-repository head
 
 library
   exposed-modules:
-      Lib
+      Kagayaki
+      Kagayaki.Type
   other-modules:
       Paths_kagayaki
   hs-source-dirs:
       src
   build-depends:
       base >=4.7 && <5
+    , directory >=1.3
+    , gloss >=1.13
+    , random >=1.1
+    , time
   default-language: Haskell2010
 
 executable kagayaki-exe
@@ -45,7 +50,11 @@ executable kagayaki-exe
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       base >=4.7 && <5
+    , directory >=1.3
+    , gloss >=1.13
     , kagayaki
+    , random >=1.1
+    , time
   default-language: Haskell2010
 
 test-suite kagayaki-test
@@ -58,5 +67,9 @@ test-suite kagayaki-test
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       base >=4.7 && <5
+    , directory >=1.3
+    , gloss >=1.13
     , kagayaki
+    , random >=1.1
+    , time
   default-language: Haskell2010
